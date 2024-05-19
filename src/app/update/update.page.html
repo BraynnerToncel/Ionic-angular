@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo">Actualizar Canción</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="updateSongForm" (submit)= "updatePage()" >
+    <ion-card>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Name song </ion-label>
+            <ion-input name="songName" [(ngModel)]="song.songName" type="text"> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Type of melody</ion-label>
+            <ion-input name="type_of_melody" type="text" [(ngModel)]="song.type_of_melody"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Number cabins</ion-label>
+            <ion-input name="number_cabins" type="text" [(ngModel)]="song.number_cabins"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Owner</ion-label>
+            <ion-textarea name="owner_song" [(ngModel)]="song.owner_song"></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
+  <div class="botones">
+    <ion-button (click)="updateSong()" class="boton">
+      <ion-icon name="refresh" ></ion-icon>
+    </ion-button>
+    <ion-button routerLink="/home" routerDirection="back" class="boton">  
+      <ion-icon name="home"></ion-icon>
+    </ion-button> 
+  </div>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo">Detalle Canción</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/home" routerDirection="back" class="boton">  
+        <ion-icon name="home"></ion-icon>
+      </ion-button>     
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="tarjeta">
+    <h3>Song</h3>
+    <p> La canción {{ song.songName }} es de tipo {{song.type_of_melody}}</p>
+    
+    <h3>Number cabins</h3>
+    <p>Esta canción pertenece al numero de cabina:  {{song.number_cabins }} </p>
+    
+    <h3>Owner song</h3>
+    <p>{{ song.owner_song }}</p>    
+
+    <div class="botones">
+      <ion-button [routerLink]="'/update/' + song.id" class="boton">Actualizar
+     </ion-button>  
+      <ion-button (click)="deleteSong()" class="boton"> Eliminar </ion-button>   
+      
+    </div>
+
+  </div>
+</ion-content>
